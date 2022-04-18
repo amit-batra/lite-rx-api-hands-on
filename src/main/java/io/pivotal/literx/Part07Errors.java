@@ -65,7 +65,7 @@ public class Part07Errors {
 		return new User(user.getUsername(), user.getFirstname(), user.getLastname());
 	}
 
-	protected final class GetOutOfHereException extends Exception {
+	protected static final class GetOutOfHereException extends Exception {
 	    private static final long serialVersionUID = 0L;
 	}
 
