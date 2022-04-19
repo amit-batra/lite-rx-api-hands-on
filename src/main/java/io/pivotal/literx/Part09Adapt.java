@@ -87,5 +87,4 @@ public class Part09Adapt {
 	Mono<User> fromCompletableFutureToMono(CompletableFuture<User> future) {
 		return Mono.fromCallable(() -> future.get());
 	}
-
 }
