@@ -80,18 +80,18 @@ public class Part06RequestTest {
 
   		List<String> log = Arrays.stream(logConsole.toString().split(System.lineSeparator()))
 							   .filter(s -> s.contains("] INFO"))
-							   .map(s -> s.replaceAll(".*] INFO .* - ", ""))
+							   .map(s -> s.replaceAll(".*] INFO .*- ", ""))
 							   .collect(Collectors.toList());
 
 		assertThat(log)
 				.containsExactly("onSubscribe(FluxZip.ZipCoordinator)"
 						, "request(1)"
-						, "onNext(Person{username='swhite', firstname='Skyler', lastname='White'})"
+						, "onNext(User{username='swhite', firstname='Skyler', lastname='White'})"
 						, "request(1)"
-						, "onNext(Person{username='jpinkman', firstname='Jesse', lastname='Pinkman'})"
+						, "onNext(User{username='jpinkman', firstname='Jesse', lastname='Pinkman'})"
 						, "request(2)"
-						, "onNext(Person{username='wwhite', firstname='Walter', lastname='White'})"
-						, "onNext(Person{username='sgoodman', firstname='Saul', lastname='Goodman'})"
+						, "onNext(User{username='wwhite', firstname='Walter', lastname='White'})"
+						, "onNext(User{username='sgoodman', firstname='Saul', lastname='Goodman'})"
 						, "onComplete()");
 	}
 
